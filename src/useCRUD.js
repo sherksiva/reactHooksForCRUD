@@ -13,7 +13,7 @@ const useCrud = (initialData = [], apiUrl) => {
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error('Failed to fetch data');
         const result = await response.json();
-        setData(result);
+        setData(result.slice(0,10));
       } catch (err) {
         setError(err);
       } finally {

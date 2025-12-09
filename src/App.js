@@ -30,9 +30,9 @@ function App() {
       <h1>Posts</h1>
       <button onClick={handleCreate}>Add New Post</button>
       <ul>
-        {data.map((post) => (
+        {data.map((post, key) => (
           <li key={post.id}>
-            {post.title}
+            {key+1}.{' '}{post.title}
             <button onClick={() => handleUpdate(post.id)}>Edit</button>
             <button onClick={() => handleDelete(post.id)}>Delete</button>
           </li>
